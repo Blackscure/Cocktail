@@ -1,20 +1,13 @@
 import './App.css';
 import Navbar from "./Components/Navbar"
 import Search from './Components/Search';
- 
- 
-
 
   function App() {
     return (
       <div>
-        <Navbar/>
+        <Navbar/><br></br><br></br><br></br><br></br><br></br>
         <Search/>
       </div>
-      
-       
-       
-  
     );
   }
 

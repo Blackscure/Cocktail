@@ -1,16 +1,12 @@
 import React from 'react'
 
-
 function Search() {
     return (
         <div>
             <form>
-                <h3>I'm looking for</h3>
-                <input ref="srch" type="search" id="search" placeholder="Search..." />
-                <button>Go</button>
-                <hr />
+            <input type="text" placeholder="Search..." required/>
+            <input type="button" value="Search"/>
             </form>
-            
         </div>
     )
 }
