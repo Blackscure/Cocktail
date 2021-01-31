@@ -11,12 +11,17 @@ import View from './Components/View'
 
     useEffect(() => {
       const fetchItems = async () => {
-        const result = await axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
+        await axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
+        .then((res, err) => {
+          if (res.status === 200) {
+            console.log("there is no err here")
+            setIsLoading(false)
+            setItems(Object.values(res.data.drinks));
+          } else {
+            console.log("there was an error: ", err)
+          }
+        })
 
-        console.log(result.data)
-
-        setItems(result.data)
-        //setIsLoading(false)
 
       }
       fetchItems()
