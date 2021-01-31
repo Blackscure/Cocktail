@@ -1,52 +1,16 @@
-.navbar {
-    overflow: hidden;
-    background-color: #666666;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  .navbar a {
-    float: right;
-    display: block;
-    color: #eeeeee;
-    text-align: center;
-    padding: 15px 18px;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .navbar a:hover {
-    color: #1c87c9;
-  }
-
-  .navbar h3{
-    font-size: 23px;
-    color: #eeeeee;
-  }
-
-  form {
-    width:500px;
-    margin:50px auto;
-}
-.search {
-    padding:8px 15px;
-    background:rgba(50, 50, 50, 0.2);
-    border:0px solid #207cca;
-}
-.button {
-    position:relative;
-    padding:6px 15px;
-    left:-8px;
-    border:2px solid #207cca;
-    background-color:#207cca;
-    color:#207cca;
-}
-.button:hover  {
-    background-color:#fafafa;
-    color:#207cca;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html,
+body {
+  background: rgb(90, 16, 16);
+  height: 100vh;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 a {
   text-decoration: none;
@@ -69,13 +33,7 @@ a {
   margin: 10px 0;
 }
 
-header {
-  height: 200px;
-}
-
-header img {
-  width: 200px;
-}
+ 
 
 .center {
   display: flex;
@@ -104,21 +62,21 @@ input[type='text'] {
   gap: 1rem;
 }
 
-.card {
+.cards {
   cursor: pointer;
   background-color: transparent;
   height: 300px;
   perspective: 1000px;
 }
 
-.card h1 {
+.cards h3 {
   font-size: 25px;
   border-bottom: 1px #fff solid;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
-.card img {
+.cards img {
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -132,12 +90,12 @@ input[type='text'] {
   transform-style: preserve-3d;
 }
 
-.card:hover .card-inner {
+.cards:hover .card-inner {
   transform: rotateY(180deg);
 }
 
-.card-front,
-.card-back {
+.cards-front,
+.cards-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -145,14 +103,14 @@ input[type='text'] {
   backface-visibility: hidden;
 }
 
-.card-back {
+.cards-back {
   background-color: #333;
   color: white;
   padding: 20px;
   transform: rotateY(180deg);
 }
 
-.card li {
+.cards li {
   list-style: none;
   padding-bottom: 10px;
 }
@@ -167,10 +125,9 @@ input[type='text'] {
   .cards {
     grid-template-columns: 1fr;
   }
-  .card img {
+  .cards img {
     width: 100%;
     height: 300px;
     object-fit: contain;
   }
 }
-  
