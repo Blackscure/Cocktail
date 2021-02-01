@@ -1,41 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import './App.css'
-import Navbar from "./Components/Navbar"
-import Search from './Components/Search';
-import View from './Components/View'
+import React from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+  } from "react-router-dom";
 
-  function App() {
-    const [items, setItems] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+import Random from './Components/Random'
+import Home from './Components/Home'
 
-    useEffect(() => {
-      const fetchItems = async () => {
-        await axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
-        .then((res, err) => {
-          if (res.status === 200) {
-            console.log("there is no err here")
-            setIsLoading(false)
-            setItems(Object.values(res.data.drinks));
-          } else {
-            console.log("there was an error: ", err)
-          }
-        })
-
-
-      }
-      fetchItems()
-
-    }, [])
-
-
+function App () {
     return (
-      <div>
-        <Navbar/><br></br><br></br><br></br><br></br><br></br>
-        <Search/>
-        <View isLoading={isLoading} items={items} />
-      </div>
-    );
-  }
+        <Router>
+          <Switch>
+            <Route path="/random">
+              <Random/>
+            </Route>
 
-  export default App;
+            <Route path="/">
+              <Home/>
+            </Route>
+          </Switch>
+      </Router>
+            
+        
+    )
+}
+
+export default App 
