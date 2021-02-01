@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Navbar from './Navbar';
+import '../App.css'
  
 function Random() {
 

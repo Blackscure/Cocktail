@@ -16,13 +16,12 @@ import View from './View'
     useEffect(() => {
       const fetchItems = async () => {
 
-        await axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita${query}`)
+        await axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`)
         .then((res, err) => {
           if (res.status === 200) {
-            console.log("there is no err here")
             setIsLoading(false)
           
-            // setItems(Object.values(res.data.drinks));
+            setItems(Object.values(res.data.drinks));
           } else {
             console.log("there was an error: ", err)
           }
@@ -36,7 +35,7 @@ import View from './View'
     return (
       <div>
         <Navbar/>
-        <Search getQuery={(q) => setQuery(q) }/>
+        <Search getQuery={(query) => setQuery(query) }/>
         <View isLoading={isLoading} items={items} />
       </div>
     );
